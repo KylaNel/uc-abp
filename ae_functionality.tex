@@ -1,0 +1,19 @@
+\begin{tcolorbox}[enhanced, colback=white, arc=5pt, breakable]
+\noindent\emph{\underline{AE channel functionality $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$}}\\[5pt]
+ Initialise a list $PendingMsg\leftarrow\emptyset$.
+ 
+\extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $M$) from P, if P is honest, then:\\
+\begin{enumerate}
+    \item If $\{A,B\} \setminus \{P\}$ is corrupted, then send (\textbf{sid}, \textbf{SEND}, $M$, P) to $\mathcal{S}$.
+    \item  If $\{A,B\} \setminus \{P\}$ is honest, then
+    \begin{itemize}
+        \item Choose a random tag $\overset{\$}{\leftarrow}\{0,1\}^\lambda $.
+        \item Add $(\textbf{tag}, M, P)$ to $PendingMsg$
+        \item Send (\textbf{sid}, \textbf{SEND}, \textbf{tag}, $|M|$, P, \{A,B\} $\setminus$ \{P\}) to $\mathcal{S}$.
+    \end{itemize}
+    \item Upon receiving (\textbf{sid}, \textbf{ALLOW}, \textbf{tag}) from $\mathcal{S}$, if there is a (\textbf{tag}, $M$, P) in $PendingMsg$, then remove (\textbf{tag}, $M$, P) from $PendingMsg$ and send (\textbf{sid},\textbf{SEND},$M$) to \{A,B\}$\setminus$\{P\}
+\end{enumerate}
+
+\end{tcolorbox}
+\captionof{figure}{Anonymous broadcast ideal functionality.}
+\label{fig:riposte_functionality}

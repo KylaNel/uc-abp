@@ -1,0 +1,45 @@
+\begin{tcolorbox}[enhanced, colback=white, arc=5pt, breakable]
+\noindent\emph{\underline{Riposte UC Protocol}}\\[5pt]
+Variables:
+\begin{itemize}
+    \item $R$ - number of rows in each database table
+    \item $C$ - length of messages
+    \item $e_l$ - $R$ x $C$ x 2 bitstring containing 0 everywhere except in row $l$ which contains $(M, M^2)\in \mathbb{F}^k$, where $M$ is the message to be sent
+    \item $K$ - message limit in a round
+\end{itemize}
+ Initialise:
+ \begin{enumerate}
+     \item $status_P\in\{0,1\}\leftarrow 0$ for party $P$ indicating whether $P$ has sent a message in the current round
+     \item $count\in\mathbb{N}\leftarrow 0$ indicating the number of valid write requests received this round
+ \end{enumerate}
+ 
+ 
+\extitem Upon receiving (\textbf{sid}, \textbf{WRITE}, $M$) from $P$\\
+If $status_P=0$, then
+\begin{enumerate}
+    \item set $status_P\leftarrow 1$
+    \item client chooses $l$
+    \item client generates $e_l$
+    \item zero-knowledge proof that write request is valid
+    \item generate random $R$ x $C$ x 2 bitstring $r$
+    \item send $r\oplus e_l$ to server B (authenticated encrypted channel)
+    \item server B XORs its message into its share of the database
+    \item send $e_l$ to server A (authenticated encrypted channel
+    \item server A XORs its message into its share of the database
+    \item $count += 1$
+    \item if $count=K$, then
+    \begin{enumerate}
+        \item servers combine their states
+        \item check for collisions
+        \item resolve collisions
+        \item order messages lexicographically
+        \item set $status_p\leftarrow0$
+        \item set $count \leftarrow 0$
+        \item broadcast messages to all parties
+    \end{enumerate}
+    \item else pass
+\end{enumerate}
+
+\end{tcolorbox}
+\captionof{figure}{Anonymous broadcast protocol.}
+\label{fig:riposte_protocol}
