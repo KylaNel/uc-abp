@@ -1,0 +1,69 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{3}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Church(1936)]%
+        {Church1936}
+\bibfield{author}{\bibinfo{person}{Alonzo Church}.} \bibinfo{year}{1936}\natexlab{}.
+\newblock \showarticletitle{An Unsolvable Problem of Elementary Number Theory}.
+\newblock \bibinfo{journal}{\emph{American Journal of Mathematics}} \bibinfo{volume}{58}, \bibinfo{number}{2} (\bibinfo{year}{1936}), \bibinfo{pages}{345--363}.
+\newblock
+\urldef\tempurl%
+\url{http://www.jstor.org/stable/2371045}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Gödel(1931)]%
+        {Goedel1931}
+\bibfield{author}{\bibinfo{person}{Kurt Gödel}.} \bibinfo{year}{1931}\natexlab{}.
+\newblock \showarticletitle{Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I}.
+\newblock \bibinfo{journal}{\emph{Monatshefte für Mathematik und Physik}} \bibinfo{volume}{38–38}, \bibinfo{number}{1} (\bibinfo{date}{Dec.} \bibinfo{year}{1931}), \bibinfo{pages}{173–--198}.
+\newblock
+\href{https://doi.org/10.1007/bf01700692}{doi:\nolinkurl{10.1007/bf01700692}}
+
+
+\bibitem[Turing(1937)]%
+        {Turing1937}
+\bibfield{author}{\bibinfo{person}{Alan~M. Turing}.} \bibinfo{year}{1937}\natexlab{}.
+\newblock \showarticletitle{On Computable Numbers, with an Application to the Entscheidungsproblem}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the London Mathematical Society}} \bibinfo{volume}{s2-42}, \bibinfo{number}{1} (\bibinfo{year}{1937}), \bibinfo{pages}{230--265}.
+\newblock
+\href{https://doi.org/10.1112/plms/s2-42.1.230}{doi:\nolinkurl{10.1112/plms/s2-42.1.230}}
+
+
+\end{thebibliography}

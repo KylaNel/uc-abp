@@ -1,4 +1,5 @@
-\begin{tcolorbox}[enhanced, colback=white, arc=5pt, breakable]
+% \begin{tcolorbox}[enhanced, colback=white, arc=5pt, breakable]
+\begin{tcolorbox}[colback=white, arc=5pt]
 \noindent\emph{\underline{Riposte UC Protocol}}\\[5pt]
 Variables:
 \begin{itemize}
@@ -18,28 +19,56 @@ Variables:
 If $status_P=0$, then
 \begin{enumerate}
     \item set $status_P\leftarrow 1$
-    \item client chooses $l$
-    \item client generates $e_l$
-    \item zero-knowledge proof that write request is valid
+    \item $P$ chooses index $l \overset{{\scriptscriptstyle\$}}{\leftarrow} \{x | x \in \mathbb{N}, 0 \le x < R\}$ and generates bitstring $e_l$
     \item generate random $R$ x $C$ x 2 bitstring $r$
-    \item send $r\oplus e_l$ to server B (authenticated encrypted channel)
-    \item server B XORs its message into its share of the database
-    \item send $e_l$ to server A (authenticated encrypted channel
-    \item server A XORs its message into its share of the database
-    \item $count += 1$
+    \item send (\textbf{prove}, $P$, $e_l$) to $\mathcal{F}_{ZK}^{R,R'}$
+    \item 
+    \item send $r\oplus e_l$ to Server B using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
+    \item send $e_l$ to Server A using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
+    
+    \item $count \pluseq 1$
     \item if $count=K$, then
     \begin{enumerate}
-        \item servers combine their states
-        \item check for collisions
-        \item resolve collisions
-        \item order messages lexicographically
         \item set $status_p\leftarrow0$
         \item set $count \leftarrow 0$
-        \item broadcast messages to all parties
     \end{enumerate}
-    \item else pass
 \end{enumerate}
 
+\extitem Upon receiving (\textbf{sid}, \textbf{BROADCAST}, $M_A$) from Server A and (\textbf{sid}, \textbf{BROADCAST}, $M_B$) from Server B
+\begin{enumerate}
+    \item Verify that $M_A = M_B$
+    \item If $M_A = M_B$, forward to $\mathcal{Z}$
+\end{enumerate}
+
+\extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $r\oplus e_l$) from $P$, if $P$ has not executed a write request in this phase, then \\
+    Server B executes the following:
+    DOES THE SERVER NEED TO WAIT FOR VERIFICATION FROM ZK HERE?
+    \begin{enumerate}
+        \item XOR $r\oplus e_l$ into its database  
+        \item if $count=K$, then
+        \begin{enumerate}
+            \item combine database with Server A's database
+            \item check for collisions
+            \item resolve collisions
+            \item order messages lexicographically as $M_B=<M_1,...,M_K>$
+            \item broadcast messages to all parties
+        \end{enumerate}
+    \end{enumerate}
+
+\extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $e_l$) from $P$, if $P$ has not executed a write request in this phase, then \\
+    Server A executes the following:
+    \begin{enumerate}
+        \item XOR $e_l$ into its database
+        \item if $count=K$, then
+        \begin{enumerate}
+            \item combine database with Server B's database
+            \item check for collisions
+            \item resolve collisions
+            \item order messages lexicographically as $M_A=<M_1,...,M_K>$
+            \item broadcast messages to all parties
+        \end{enumerate}
+    \end{enumerate}
 \end{tcolorbox}
+
 \captionof{figure}{Anonymous broadcast protocol.}
 \label{fig:riposte_protocol}
