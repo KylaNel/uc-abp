@@ -24,7 +24,7 @@ If $status_P=0$, then
     \item send (\textbf{prove}, $P$, $e_l$) to $\mathcal{F}_{ZK}^{R,R'}$
     \item 
     \item send $r\oplus e_l$ to Server B using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
-    \item send $e_l$ to Server A using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
+    \item send $r$ to Server A using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
     
     \item $count \pluseq 1$
     \item if $count=K$, then
@@ -58,7 +58,7 @@ If $status_P=0$, then
 \extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $e_l$) from $P$, if $P$ has not executed a write request in this phase, then \\
     Server A executes the following:
     \begin{enumerate}
-        \item XOR $e_l$ into its database
+        \item XOR $r$ into its database
         \item if $count=K$, then
         \begin{enumerate}
             \item combine database with Server B's database
