@@ -42,7 +42,7 @@ If $status_P=0$, then
 
 \extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $r\oplus e_l$) from $P$, if $P$ has not executed a write request in this phase, then \\
     Server B executes the following:
-    DOES THE SERVER NEED TO WAIT FOR VERIFICATION FROM ZK HERE?
+    
     \begin{enumerate}
         \item XOR $r\oplus e_l$ into its database  
         \item if $count=K$, then

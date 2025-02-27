@@ -34,10 +34,12 @@
 % % % % % % % % % % % % % % % % % % % % %
 
 \begin{abstract}
+
 \input{riposte_uc_functionality}
 \input{riposte_uc_protocol}
 \input{ae_functionality}
 \input{zk_functionality.tex}
+\input{bc_functionality.tex}
 \end{abstract}
 
 %%%%%%%%%%%% DO NOT EDIT THIS PART!!! %%%%%%%%%%%%
@@ -56,32 +58,38 @@
 \section{Introduction}
 \label{sec:intro}
 
-This document is the \LaTeX template for submitting your final MSci project
-paper, at the School of Computing Science of the University of Glasgow. This is
-an updated version, starting for the academic year 2024/25. Please make sure to
-update your personal details, including title, name, and matriculation number,
-within the \verb|%% STUDENT INFORMATION %%| section of the attached \LaTeX
-source file \verb|main.tex|.
+\section{Proof}
 
-This template is directly derived from ACM's
-\href{https://ctan.org/pkg/acmart?lang=en}{\texttt{acmart}} package; make sure
-to consult the corresponding
-\href{http://mirrors.ctan.org/macros/latex/contrib/acmart/acmart.pdf}{documentation}
-if you face any technical issues, or if you want to explore the full range of
-features offered.
-
-Unless you are already an experienced \LaTeX user, perhaps the most
-straightforward way to typeset your paper is to work directly on Overleaf; this
-is a cloud service (so no need for a local installation) which you can easily
-sign up for using your \verb|@glasgow.ac.uk| email. Here is also a very useful
-\href{https://www.overleaf.com/learn/latex/Tutorials}{\LaTeX\ tutorial}.
+Cases:
+\begin{enumerate}
+  \item U.r. (\textbf{sid}, WRITE, $|M|$, $P$) from functionality:
+  \begin{itemize}
+    \item Simulate a WRITE request on behalf of $P$ where $M$ is all-zeroes
+    \item Generate $e_{\ell, M}$
+    \item $\mathcal{F}_{ZK}$ leaks nothing. $\mathcal{F}_{AEC}$ leaks the length of the message $|M|$, so the simulator sends $|M|$ to the adversary
+  \end{itemize}
+  \item U.r. $<M_1,...,M_k>$ from the functionality:
+  If Server A is corrupted, then
+  \begin{itemize}
+    \item Simulator sends a dummy message containing all zeroes over $\mathcal{F}_{AEC}$
+    \item Randomly assign honest messages to honest parties
+    \item Generate $e_{\ell,M}$ of the corresponding party and send $r$ to Server A, then $e_{\ell,M}\oplus r$ is the share of party $P$ for Server B
+  \end{itemize}
+  If Server B is corrupted, then
+  \begin{itemize}
+    \item Simulator equivocates by sending any $r$ to Server A
+    \item Randomly assign honest messages to honest parties
+    \item Construct a consistent $e_{\ell,M}$
+    \item Send $e_{\ell,M}\oplus r$ of the corresponding party to Server B
+  \end{itemize}
+\end{enumerate}
 
 % % % % % % % % % % % % % % % % % % % % %
 % 	         BACKGROUND
 % % % % % % % % % % % % % % % % % % % % %
 \section{Background}
 \label{sec:background}
-\lipsum[1-2]
+
 
 Perhaps you want to cite the seminal paper of \citet{Turing1937}, or
 prior~\cite{Goedel1931} and concurrent~\cite{Church1936} work.
@@ -90,20 +98,19 @@ prior~\cite{Goedel1931} and concurrent~\cite{Church1936} work.
 % % % % % % % % % % % % % % % % % % % % %
 \section{My Amazing System}
 \label{sec:system}
-\lipsum[1-3]
+
 
 % % % % % % % % % % % % % % % % % % % % %
 % 			EVALUATION
 % % % % % % % % % % % % % % % % % % % % %
 \section{Evaluation}
 \label{sec:evaluation}
-\lipsum[1]
 
 \subsection{Experimental Setup}
-\lipsum[1-2]
+
 
 \subsection{Experimental Analysis}
-\lipsum[1-2]
+
 
 Our results are summarized in~\cref{tab:table1}, and a visual representation of
 our analysis can be seen in~\cref{fig:alice}.
