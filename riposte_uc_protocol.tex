@@ -5,7 +5,7 @@ Variables:
 \begin{itemize}
     \item $R$ - number of rows in each database table
     \item $C$ - length of messages
-    \item $e_l$ - $R$ x $C$ x 2 bitstring containing 0 everywhere except in row $l$ which contains $(M, M^2)\in \mathbb{F}^k$, where $M$ is the message to be sent
+    \item $e_{\ell,M}$ - $R$ x $C$ x 2 bitstring containing 0 everywhere except in row $l$ which contains $(M, M^2)\in \mathbb{F}^k$, where $M$ is the message to be sent
     \item $K$ - message limit in a round
 \end{itemize}
  Initialise:
@@ -19,11 +19,11 @@ Variables:
 If $status_P=0$, then
 \begin{enumerate}
     \item set $status_P\leftarrow 1$
-    \item $P$ chooses index $l \overset{{\scriptscriptstyle\$}}{\leftarrow} \{x | x \in \mathbb{N}, 0 \le x < R\}$ and generates bitstring $e_l$
+    \item $P$ chooses index $l \overset{{\scriptscriptstyle\$}}{\leftarrow} [0,R)$ and generates bitstring $e_l$
     \item generate random $R$ x $C$ x 2 bitstring $r$
-    \item send (\textbf{prove}, $P$, $e_l$) to $\mathcal{F}_{ZK}^{R,R'}$
+    \item send (\textbf{prove}, $P$, $e_{\ell,M}$) to $\mathcal{F}_{ZK}^{R,R'}$
     \item 
-    \item send $r\oplus e_l$ to Server B using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
+    \item send $r\oplus e_{\ell,M}$ to Server B using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
     \item send $r$ to Server A using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
     
     \item $count \pluseq 1$
@@ -44,7 +44,7 @@ If $status_P=0$, then
     Server B executes the following:
     
     \begin{enumerate}
-        \item XOR $r\oplus e_l$ into its database  
+        \item XOR $r\oplus e_{\ell,M}$ into its database  
         \item if $count=K$, then
         \begin{enumerate}
             \item combine database with Server A's database
