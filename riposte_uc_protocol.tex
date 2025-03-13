@@ -22,7 +22,6 @@ If $status_P=0$, then
     \item $P$ chooses index $l \overset{{\scriptscriptstyle\$}}{\leftarrow} \{x | x \in \mathbb{N}, 0 \le x < R\}$ and generates bitstring $e_l$
     \item generate random $R$ x $C$ x 2 bitstring $r$
     \item send (\textbf{prove}, $P$, $e_l$) to $\mathcal{F}_{ZK}^{R,R'}$
-    \item 
     \item send $r\oplus e_l$ to Server B using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
     \item send $r$ to Server A using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
     
@@ -44,28 +43,58 @@ If $status_P=0$, then
     Server B executes the following:
     
     \begin{enumerate}
-        \item XOR $r\oplus e_l$ into its database  
-        \item if $count=K$, then
+        \item Upon receiving (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$, if received (\textbf{sid}, WRITE, M) from $P$:
         \begin{enumerate}
-            \item combine database with Server A's database
-            \item check for collisions
-            \item resolve collisions
-            \item order messages lexicographically as $M_B=<M_1,...,M_K>$
-            \item broadcast messages to all parties
+            \item XOR $r\oplus e_l$ into its database  
+            \item if $count=K$, then
+            \begin{enumerate}
+                \item combine database with Server A's database
+                \item check for collisions
+                \item resolve collisions
+                \item order messages lexicographically as $M_B=<M_1,...,M_K>$
+                \item broadcast messages to all parties
+            \end{enumerate}
+        \end{enumerate}
+        \item Upon receiving (\textbf{sid}, WRITE, M) from $P$, if received (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$:
+        \begin{enumerate}
+            \item XOR $r\oplus e_l$ into its database  
+            \item if $count=K$, then
+            \begin{enumerate}
+                \item combine database with Server A's database
+                \item check for collisions
+                \item resolve collisions
+                \item order messages lexicographically as $M_B=<M_1,...,M_K>$
+                \item broadcast messages to all parties
+            \end{enumerate}
         \end{enumerate}
     \end{enumerate}
 
-\extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $e_l$) from $P$, if $P$ has not executed a write request in this phase, then \\
+\extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $r$) from $P$, if $P$ has not executed a write request in this phase, then \\
     Server A executes the following:
     \begin{enumerate}
-        \item XOR $r$ into its database
-        \item if $count=K$, then
+        \item Upon receiving (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$, if received (\textbf{sid}, WRITE, M) from $P$:
         \begin{enumerate}
-            \item combine database with Server B's database
-            \item check for collisions
-            \item resolve collisions
-            \item order messages lexicographically as $M_A=<M_1,...,M_K>$
-            \item broadcast messages to all parties
+            \item XOR $r$ into its database
+            \item if $count=K$, then
+            \begin{enumerate}
+                \item combine database with Server B's database
+                \item check for collisions
+                \item resolve collisions
+                \item order messages lexicographically as $M_A=<M_1,...,M_K>$
+                \item broadcast messages to all parties
+            \end{enumerate}
+        \end{enumerate}
+        \item Upon receiving (\textbf{sid}, WRITE, M) from $P$, if received (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$:
+        \begin{enumerate}
+            \item XOR $r$ into its database
+            \item if $count=K$, then
+            \begin{enumerate}
+                \item combine database with Server B's database
+                \item check for collisions
+                \item resolve collisions
+                \item order messages lexicographically as $M_A=<M_1,...,M_K>$
+                \item broadcast messages to all parties
+            \end{enumerate}
         \end{enumerate}
     \end{enumerate}
 \end{tcolorbox}

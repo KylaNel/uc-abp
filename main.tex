@@ -20,9 +20,9 @@
 % % % % % % % % % % % % % % % % % % % % %
 \title{The Title of Your Paper}
 
-\author{Clever Student} %% ENTER YOUR NAME HERE!!!
+\author{Kyla Nel} %% ENTER YOUR NAME HERE!!!
 \affiliation{
-  \country{1234567a} %% ENTER YOUR MATRICULATION NUMBER HERE!!!
+  \country{2576953n} %% ENTER YOUR MATRICULATION NUMBER HERE!!!
 }
 
 
@@ -64,7 +64,7 @@ Cases:
 \begin{enumerate}
   \item U.r. (\textbf{sid}, WRITE, $|M|$, $P$) from functionality:
   \begin{itemize}
-    \item Simulate a WRITE request on behalf of $P$ where $M$ is all-zeroes
+    \item Simulate a WRITE request on behalf of $P$ where $M_{Dummy}$ is all-zeroes
     \item Generate $e_{\ell, M}$
     \item $\mathcal{F}_{ZK}$ leaks nothing. $\mathcal{F}_{AEC}$ leaks the length of the message $|M|$, so the simulator sends $|M|$ to the adversary
   \end{itemize}
@@ -72,17 +72,32 @@ Cases:
   If Server A is corrupted, then
   \begin{itemize}
     \item Simulator sends a dummy message containing all zeroes over $\mathcal{F}_{AEC}$
+    \item Extract the subset of honest messages from the set of all messages.
     \item Randomly assign honest messages to honest parties
     \item Generate $e_{\ell,M}$ of the corresponding party and send $r$ to Server A, then $e_{\ell,M}\oplus r$ is the share of party $P$ for Server B
   \end{itemize}
   If Server B is corrupted, then
   \begin{itemize}
     \item Simulator equivocates by sending any $r$ to Server A
+    \item Extract the subset of honest messages from the set of all messages.
     \item Randomly assign honest messages to honest parties
     \item Construct a consistent $e_{\ell,M}$
     \item Send $e_{\ell,M}\oplus r$ of the corresponding party to Server B
   \end{itemize}
+  \item If an adversarial message is received, then 
+  \begin{itemize}
+    \item Simulator reconstructs M since it controls $\mathcal{F}_{AEC}$ and every $P$ is forced to send messages across the authenticated encrypted channel because all adversaries are passive
+    \item Tell the functionality to add M to the list of pending messages
+  \end{itemize}
 \end{enumerate}
+
+\textbf{Case 1:} We first deal with the case where each party $P_i$ is honest. When Z provides input to $P_i$, S begins running $\pi_R$ on behalf of the honest party $P_i$. The protocol execution is easily simulated by S. In the hybrid world, the authenticated encrypted channel leaks the length of messages sent through it. In the ideal world, S emulates this by leaking the length of messages sent through itself when it plays the role of $\mathcal{F}_{AEC}$.
+
+\textbf{Case 2:} Next we deal with the case where Server A is passively corrupted. Here $\mathcal{A}$ requests to corrupt Server A in the hybrid world and so S corrupts Server A in the ideal world. Upon receiving (\textbf{sid}, WRITE, $M_i$) from honest party $P_i$, S generates $e_{l, M_i}$ and random vector $r$. S then sends $r\oplus e_{l, M_i}$ to Server B and $r$ to Server A on behalf of $P_i$. Upon receiving (\textbf{sid}, BROADCAST, $<M_1,...,M_k$) from $\mathcal{F}_{BC}$, S extracts the subset of honest messages from $<M_1,...,M_k>$ and randomly assigns the honest messages to honest parties. S orders these messages lexicographically and forwards them to Z.
+
+\textbf{Case 3:} The next case to consider is the case where Server B is passively corrupted. Here $\mathcal{A}$ requests to corrupt Server B in the hybrid world and so S corrupts Server A in the ideal world. Upon receiving (\textbf{sid}, WRITE, M) from honest party $P_i$, S equivocates by sending any random vector $r$ to Server A. S then generates $e_{l,M_i}$ and sends $r\oplus e_{l,M_i}$ to Server B. When the two servers combine their shares, A can send any share $g$ instead of $e_{l,M_i}$ on behalf of Server B. However, when shares are combined, $r\oplus e_{l,M_i} \oplus r$ and $g \oplus r$ share the same distribution and are thus indistinguishable. Upon receiving (\textbf{sid}, BROADCAST, $<M_1,...,M_k$) from $\mathcal{F}_{BC}$, S extracts the subset of honest messages from $<M_1,...,M_k>$ and randomly assigns the honest messages to honest parties. S orders these messages lexicographically and forwards them to Z.
+
+\textbf{Case 4:} Lastly we consider the case where a party $P^*$ is corrupted. A requests to corrupt $P^*$ in the hybrid world so S corrupts $P^*$ in the ideal world. A sends (\textbf{sid}, WRITE, $M^*$) on behalf of $P^*$. A then continues to execute the protocol, creating shares and sending them to Server A and Server B. Since these shares are sent over $\mathcal{F}_{AEC}$, S can view these as it emulates the functionality. This allows S to reconstruct $M^*$. S can then signal its own functionality $\mathcal{F}_R^K$ to add $M^*$ to the list of pending messages.
 
 % % % % % % % % % % % % % % % % % % % % %
 % 	         BACKGROUND
@@ -112,28 +127,28 @@ prior~\cite{Goedel1931} and concurrent~\cite{Church1936} work.
 \subsection{Experimental Analysis}
 
 
-Our results are summarized in~\cref{tab:table1}, and a visual representation of
-our analysis can be seen in~\cref{fig:alice}.
+% Our results are summarized in~\cref{tab:table1}, and a visual representation of
+% our analysis can be seen in~\cref{fig:alice}.
 
-%% Example of table
-\begin{table}
-\footnotesize
-\begin{tabular}{lll}
-\toprule
-         & machine A                   & machine B                           \\
-\midrule
-CPU      & Intel Core i7-9700 CPU      & 2x Intel Xeon E5-2630 v3            \\
-CPU Frequency& 3.00GHz                     & 2.40GHz                             \\
-RAM      & 16GB DDR4                   & 128GB                               \\
-OS       & Ubuntu 20.04 LTS            & Ubuntu 16.04 LTS                    \\
-Compiler & GCC 9.3                     & GCC 7.3                             \\
-libm     & v2.31                       & v2.23                               \\
-libomp   & v4.5                        & v4.5                                \\
-\bottomrule
-\end{tabular}
-\caption{This is the table caption.}
-\label{tab:table1}
-\end{table}
+% %% Example of table
+% \begin{table}
+% \footnotesize
+% \begin{tabular}{lll}
+% \toprule
+%          & machine A                   & machine B                           \\
+% \midrule
+% CPU      & Intel Core i7-9700 CPU      & 2x Intel Xeon E5-2630 v3            \\
+% CPU Frequency& 3.00GHz                     & 2.40GHz                             \\
+% RAM      & 16GB DDR4                   & 128GB                               \\
+% OS       & Ubuntu 20.04 LTS            & Ubuntu 16.04 LTS                    \\
+% Compiler & GCC 9.3                     & GCC 7.3                             \\
+% libm     & v2.31                       & v2.23                               \\
+% libomp   & v4.5                        & v4.5                                \\
+% \bottomrule
+% \end{tabular}
+% \caption{This is the table caption.}
+% \label{tab:table1}
+% \end{table}
 
 %% Example of figure
 % \begin{figure}

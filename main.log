@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.19)  27 FEB 2025 09:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.19)  13 MAR 2025 09:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1330,7 +1330,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-Overfull \vbox (16.57617pt too high) has occurred while \output is active []
+Overfull \vbox (317.93pt too high) has occurred while \output is active []
 
 
 
@@ -1339,7 +1339,7 @@ Overfull \vbox (16.57617pt too high) has occurred while \output is active []
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 73.
+(caption)                particular \caption on input line 102.
 See the caption package documentation for explanation.
 
 ) (./ae_functionality.tex
@@ -1382,27 +1382,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 )
-<CompSci_logo.pdf, id=108, 340.27126pt x 49.18375pt>
+<CompSci_logo.pdf, id=125, 340.27126pt x 49.18375pt>
 File: CompSci_logo.pdf Graphic file (type pdf)
 <use CompSci_logo.pdf>
 Package pdftex.def Info: CompSci_logo.pdf  used on input line 51.
 (pdftex.def)             Requested size: 340.27042pt x 49.18361pt.
 
 
-LaTeX Warning: Reference `fig:alice' on page 1 undefined on input line 116.
-
-
-
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 155.
+(Font)              scaled to size 9.0pt on input line 95.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 155.
+(Font)              scaled to size 7.0pt on input line 95.
 [2.2 <./CompSci_logo.pdf>] (./main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 43.
 )
 
 
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
 
 (c:/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -1415,27 +1417,24 @@ L3 programming layer <2025-01-18>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 798424DED2D6C999359DA43007D3EB2F;1207.
+(rerunfilecheck)             Checksum: 4C0326741DE3C443F36ACC3F1C4CB5D3;1207.
  ) 
 Here is how much of TeX's memory you used:
- 35159 strings out of 473201
- 657882 string characters out of 5720299
- 1175456 words of memory out of 5000000
- 57316 multiletter control sequences out of 15000+600000
- 695983 words of font info for 256 fonts, out of 8000000 for 9000
+ 35194 strings out of 473201
+ 658415 string characters out of 5720299
+ 1187989 words of memory out of 5000000
+ 57307 multiletter control sequences out of 15000+600000
+ 699347 words of font info for 275 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,12n,131p,1042b,733s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (3 pages, 438034 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (3 pages, 446717 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 93 named destinations out of 1000 (max. 500000)
  71794 words of extra memory for PDF output out of 74296 (max. 10000000)
 
