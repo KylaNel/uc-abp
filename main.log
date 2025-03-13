@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.19)  13 MAR 2025 09:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.19)  13 MAR 2025 09:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1042,12 +1042,6 @@ Package: balance 1999/02/23 4.3 (PWD)
 \oldvsize=\dimen301
 ) Include comment 'screenonly' Excluding comment 'printonly' Include comment 'anonsuppress' (./main.aux
 
-LaTeX Warning: Label `fig:riposte_functionality' multiply defined.
-
-
-LaTeX Warning: Label `fig:riposte_functionality@cref' multiply defined.
-
-
 LaTeX Warning: Label `fig:zk_functionality' multiply defined.
 
 
@@ -1330,7 +1324,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-Overfull \vbox (317.93pt too high) has occurred while \output is active []
+Overfull \vbox (374.13544pt too high) has occurred while \output is active []
 
 
 
@@ -1339,7 +1333,7 @@ Overfull \vbox (317.93pt too high) has occurred while \output is active []
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 102.
+(caption)                particular \caption on input line 108.
 See the caption package documentation for explanation.
 
 ) (./ae_functionality.tex
@@ -1382,7 +1376,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 )
-<CompSci_logo.pdf, id=125, 340.27126pt x 49.18375pt>
+<CompSci_logo.pdf, id=131, 340.27126pt x 49.18375pt>
 File: CompSci_logo.pdf Graphic file (type pdf)
 <use CompSci_logo.pdf>
 Package pdftex.def Info: CompSci_logo.pdf  used on input line 51.
@@ -1423,18 +1417,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4C0326741DE3C443F36ACC3F1C4CB5D3;1207.
  ) 
 Here is how much of TeX's memory you used:
- 35194 strings out of 473201
- 658415 string characters out of 5720299
- 1187989 words of memory out of 5000000
- 57307 multiletter control sequences out of 15000+600000
- 699347 words of font info for 275 fonts, out of 8000000 for 9000
+ 35199 strings out of 473201
+ 658431 string characters out of 5720299
+ 1191837 words of memory out of 5000000
+ 57309 multiletter control sequences out of 15000+600000
+ 699074 words of font info for 273 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,12n,131p,1042b,733s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (3 pages, 446717 bytes).
+Output written on main.pdf (3 pages, 450418 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 213 compressed objects within 3 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
+ 99 named destinations out of 1000 (max. 500000)
  71794 words of extra memory for PDF output out of 74296 (max. 10000000)
 
