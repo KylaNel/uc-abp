@@ -36,7 +36,9 @@
 \begin{abstract}
 
 \input{riposte_uc_functionality}
+\begin{table*}
 \input{riposte_uc_protocol}
+\end{table*}
 \input{ae_functionality}
 \input{zk_functionality.tex}
 \input{bc_functionality.tex}
@@ -60,44 +62,47 @@
 
 \section{Proof}
 
-Cases:
-\begin{enumerate}
-  \item U.r. (\textbf{sid}, WRITE, $|M|$, $P$) from functionality:
-  \begin{itemize}
-    \item Simulate a WRITE request on behalf of $P$ where $M_{Dummy}$ is all-zeroes
-    \item Generate $e_{\ell, M}$
-    \item $\mathcal{F}_{ZK}$ leaks nothing. $\mathcal{F}_{AEC}$ leaks the length of the message $|M|$, so the simulator sends $|M|$ to the adversary
-  \end{itemize}
-  \item U.r. $<M_1,...,M_k>$ from the functionality:
-  If Server A is corrupted, then
-  \begin{itemize}
-    \item Simulator sends a dummy message containing all zeroes over $\mathcal{F}_{AEC}$
-    \item Extract the subset of honest messages from the set of all messages.
-    \item Randomly assign honest messages to honest parties
-    \item Generate $e_{\ell,M}$ of the corresponding party and send $r$ to Server A, then $e_{\ell,M}\oplus r$ is the share of party $P$ for Server B
-  \end{itemize}
-  If Server B is corrupted, then
-  \begin{itemize}
-    \item Simulator equivocates by sending any $r$ to Server A
-    \item Extract the subset of honest messages from the set of all messages.
-    \item Randomly assign honest messages to honest parties
-    \item Construct a consistent $e_{\ell,M}$
-    \item Send $e_{\ell,M}\oplus r$ of the corresponding party to Server B
-  \end{itemize}
-  \item If an adversarial message is received, then 
-  \begin{itemize}
-    \item Simulator reconstructs M since it controls $\mathcal{F}_{AEC}$ and every $P$ is forced to send messages across the authenticated encrypted channel because all adversaries are passive
-    \item Tell the functionality to add M to the list of pending messages
-  \end{itemize}
-\end{enumerate}
+% Cases:
+% \begin{enumerate}
+%   \item U.r. (\textbf{sid}, WRITE, $|M|$, $P$) from functionality:
+%   \begin{itemize}
+%     \item Simulate a WRITE request on behalf of $P$ where $M_{Dummy}$ is all-zeroes
+%     \item Generate $e_{\ell, M}$
+%     \item $\mathcal{F}_{ZK}$ leaks nothing. $\mathcal{F}_{AEC}$ leaks the length of the message $|M|$, so the simulator sends $|M|$ to the adversary
+%   \end{itemize}
+%   \item U.r. $<M_1,...,M_k>$ from the functionality:
+%   If Server A is corrupted, then
+%   \begin{itemize}
+%     \item Simulator sends a dummy message containing all zeroes over $\mathcal{F}_{AEC}$
+%     \item Extract the subset of honest messages from the set of all messages.
+%     \item Randomly assign honest messages to honest parties
+%     \item Generate $e_{\ell,M}$ of the corresponding party and send $r$ to Server A, then $e_{\ell,M}\oplus r$ is the share of party $P$ for Server B
+%   \end{itemize}
+%   If Server B is corrupted, then
+%   \begin{itemize}
+%     \item Simulator equivocates by sending any $r$ to Server A
+%     \item Extract the subset of honest messages from the set of all messages.
+%     \item Randomly assign honest messages to honest parties
+%     \item Construct a consistent $e_{\ell,M}$
+%     \item Send $e_{\ell,M}\oplus r$ of the corresponding party to Server B
+%   \end{itemize}
+%   \item If an adversarial message is received, then 
+%   \begin{itemize}
+%     \item Simulator reconstructs M since it controls $\mathcal{F}_{AEC}$ and every $P$ is forced to send messages across the authenticated encrypted channel because all adversaries are passive
+%     \item Tell the functionality to add M to the list of pending messages
+%   \end{itemize}
+% \end{enumerate}
 
-\textbf{Case 1:} We first deal with the case where each party $P_i$ is honest. When Z provides input to $P_i$, S begins running $\pi_R$ on behalf of the honest party $P_i$. The protocol execution is easily simulated by S. In the hybrid world, the authenticated encrypted channel leaks the length of messages sent through it. In the ideal world, S emulates this by leaking the length of messages sent through itself when it plays the role of $\mathcal{F}_{AEC}$.
+\textbf{Case 1:} We first examine the case where Server A is corrupted and $\mathcal{S}$ controls the honest Server B. Here $\mathcal{A}$ requests to corrupt Server A in the hybrid world and so S corrupts Server A in the ideal world. Upon receiving (\textbf{sid}, \textbf{WRITE}, |$M$|, $P$) from $\mathcal{F}_R^K$ where $P$ is an honest party, $\mathcal{S}$ simulates a \textbf{WRITE} request with a dummy all-zero message $M_0=0...0$ on behalf of $P$. In this case, $\mathcal{S}$ simulates the protocol as written, using the dummy message $M_0$ to generate $e_{\ell, M_0}$. LEAK DATA. Upon receiving (\textbf{sid}, \textbf{WRITE}, |$M^*$|, $P^*$) from $\mathcal{F}_R^K$ where $P^*$ is a corrupted party, $\mathcal{S}$ reconstructs $M^*$ from the two shares sent to Server A and Server B respectively across $\mathcal{F}_{AEC}(\{A,B\})$. This is made possible by the fact that parties are passively corrupted and so are forced to communicate using $\mathcal{F}_{AEC}$ exclusively, which $\mathcal{S}$ controls. Having reconstructed $M^*$, $\mathcal{S}$ then sends a WRITE request (\textbf{SID}, \textbf{WRITE}, $M^*$, $P^*$) to the functionality. Upon receiving (\textbf{sid}, \textbf{BROADCAST}, $<M_1,...,M_K>$) from $\mathcal{F}_R^K$, $\mathcal{S}$ extracts the subset of honest messages from $<M_1,...,M_K>$ and randomly assigns the honest messages to honest parties. For each honest party $P_i$ with associated message $M_i$, $\mathcal{S}$ constructs $e_{\ell,M_i}$ and creates the share $e_{\ell,M_i} \oplus r$. $\mathcal{S}$ sends $r$ to Server A and $e_{\ell, M_i}$ to Server B. At this stage, $\mathcal{S}$ must also simulate the WRITE request sent by the party $P_K$ which is associated with $M_K$, the $K$-th message added to $L_{pend}$. This follows the steps outlined above, depending on whether $P_K$ is honest or corrupted.
 
-\textbf{Case 2:} Next we deal with the case where Server A is passively corrupted. Here $\mathcal{A}$ requests to corrupt Server A in the hybrid world and so S corrupts Server A in the ideal world. Upon receiving (\textbf{sid}, WRITE, $M_i$) from honest party $P_i$, S generates $e_{l, M_i}$ and random vector $r$. S then sends $r\oplus e_{l, M_i}$ to Server B and $r$ to Server A on behalf of $P_i$. Upon receiving (\textbf{sid}, BROADCAST, $<M_1,...,M_k$) from $\mathcal{F}_{BC}$, S extracts the subset of honest messages from $<M_1,...,M_k>$ and randomly assigns the honest messages to honest parties. S orders these messages lexicographically and forwards them to Z.
+\textbf{Case 2:} Next, we examine the case where Server B is corrupted and $\mathcal{S}$ controls the honest Server A. In this case, $\mathcal{S}$ follows the same steps as in Case 1, however, $\mathcal{S}$ equivocates by sending any random bitsring $r$ to Server B. After the assignment of honest messages to honest partiews, $\mathcal{S}$ constructs a consistent $e_{\ell, M}$ for every honest message $M$ and sneds $e_{\ell, M}\oplus r$ to Server B.
 
-\textbf{Case 3:} The next case to consider is the case where Server B is passively corrupted. Here $\mathcal{A}$ requests to corrupt Server B in the hybrid world and so S corrupts Server A in the ideal world. Upon receiving (\textbf{sid}, WRITE, M) from honest party $P_i$, S equivocates by sending any random vector $r$ to Server A. S then generates $e_{l,M_i}$ and sends $r\oplus e_{l,M_i}$ to Server B. When the two servers combine their shares, A can send any share $g$ instead of $e_{l,M_i}$ on behalf of Server B. However, when shares are combined, $r\oplus e_{l,M_i} \oplus r$ and $g \oplus r$ share the same distribution and are thus indistinguishable. Upon receiving (\textbf{sid}, BROADCAST, $<M_1,...,M_k$) from $\mathcal{F}_{BC}$, S extracts the subset of honest messages from $<M_1,...,M_k>$ and randomly assigns the honest messages to honest parties. S orders these messages lexicographically and forwards them to Z.
+In both cases, whatever is sent by the corrupted server when the servers combine their states, the results will be statistically indistuinguishable from the result if both servers were honest.
 
-\textbf{Case 4:} Lastly we consider the case where a party $P^*$ is corrupted. A requests to corrupt $P^*$ in the hybrid world so S corrupts $P^*$ in the ideal world. A sends (\textbf{sid}, WRITE, $M^*$) on behalf of $P^*$. A then continues to execute the protocol, creating shares and sending them to Server A and Server B. Since these shares are sent over $\mathcal{F}_{AEC}$, S can view these as it emulates the functionality. This allows S to reconstruct $M^*$. S can then signal its own functionality $\mathcal{F}_R^K$ to add $M^*$ to the list of pending messages.
+\section{Collision Handling}
+We assume the messages being written to the database are elements in some field $\mathbb{F}$ of prime charactersitic $p$. When a message is written to the database, it is added to the current database state by addition in $\mathbb{F}$. When a party $P_A$ wants to write the message $M_A\in \mathbb{F}$ to row $\ell$ in the database, the party actually writes the pair $(M_A,M_A^2)\in \mathbb{F}^2$ into row $\ell$. If no collision occurs, i.e. only one client writes their message to row $\ell$ in the database, recovering the original message is trivial. It is easy to check when this is the case, since the second coordinate will be the square of the first. In the case of a two-way collision, say party $P_B$ also writes their message pair $(M_B,M_B^2)\in \mathbb{F}^2$ to the same row $\ell$ in the database. Now the message pair contained in row $\ell$ of the database is $$S_1=M_A+M_B (\text{mod} p)$$ and $$S_2=M_A^2+M_B^2 (\text{mod}p)$$. Observing that $$2S_2-S_1^2=(M_A-M_B)^2(\text{mod}p)$$ we can obtain $M_A-M_B$ by taking a square root modulo $p$. Using $S_1=M_A+M_B$we can easily recover $M_A$ and $M_B$.
+
+This way of handling two-way collisions can be generalised to $k$-way collision for $k>2$. Each party $P_i$ wanting to write their message $M_i$ into the database instead writes $(M_i,M_i^2,...,M_i^k)\in \mathbb{F}^k$ to its chosen row $\ell$. Now, if a $k$-way collision occurs, we have $k$ equations in $k$ variables which can be solved efficiently to recover all $k$ messages, as long as the characteristic $p$ of $\mathbb{F}$ is greater than $k$.
 
 % % % % % % % % % % % % % % % % % % % % %
 % 	         BACKGROUND

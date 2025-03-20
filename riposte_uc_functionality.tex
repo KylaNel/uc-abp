@@ -18,7 +18,7 @@ If $status_P=0$, then
         \item order the messages lexicographically as $<M_1,...,M_K>$
         \item set $L{pend}\leftarrow []$
         \item set $status_P\leftarrow 0$ for every $P$
-        \item send (\textbf{sid}, \textbf{BROADCAST}, $<M_1,...M_K>$ to all parties and (\textbf{sid}, \textbf{BROADCAST}, $<M_1,...M_K>, P)$ to $S$
+        \item send (\textbf{sid}, \textbf{BROADCAST}, $<M_1,...,M_K>$ to all parties and (\textbf{sid}, \textbf{BROADCAST}, $<M_1,...M_K>, P)$ to $S$
     \end{enumerate}
     \item else, send (\textbf{sid}, \textbf{WRITE}, $|M|$, $P$) to $S$
 \end{enumerate}
