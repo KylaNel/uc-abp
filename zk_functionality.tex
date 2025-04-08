@@ -1,17 +1,11 @@
 % \begin{tcolorbox}[enhanced, colback=white, arc=5pt, breakable]
 \begin{tcolorbox}[colback=white, arc=5pt]
-    \noindent\emph{\underline{Zero-knowledge functionality $\mathcal{F}_{ZK}^{R,R'}$}}\\[5pt]
+    \noindent\emph{\underline{Non-interactive zero knowledge functionality $\mathcal{F}_{NIZK}^{R}$}}\\[5pt]
     \begin{enumerate}
-        \item Wait for an input (\textbf{prove, $y$, $w$}) from $P$ such that $(y,w)\in R$ if $P$ is honest, or ${y,w}\in R'$ if $P$ is corrupt. Send (\textbf{prove}, l(y)) to $\mathcal{A}$. Further, wait for a message \textbf{ready} from $V$, and send \textbf{ready} to $\mathcal{A}$.
-        \item  Wait for message \textbf{lock} from $\mathcal{A}$.
-        \item Upon receiving a message \textbf{done} from $\mathcal{A}$, send \textbf{done} to $P$. Further, wait for an input \textbf{proof} from $\mathcal{A}$ and send (\textbf{proof}, $y$) to $V$.
+        \item \textbf{Proof:} On input (\text{prove}, \textbf{sid}, $x$, $w$) from party $P$: if $\mathcal{R}(x,w)=1$ then send (\text{prove}, $P$, \textbf{sid}, $x$) to $\mathcal{S}$. Upon receiving (\text{proof}, \textbf{sid},$\pi$) from $\mathcal{S}$, store (\textbf{sid}, $x$, $w$, $\pi$) and send (\text{proof}, \textbf{sid},$\pi$) to $P$.
+        \item \textbf{Verification:} On input (\text{verify}, \textbf{sid},$x$,$\pi$) from a party $V$: If (\textbf{sid},$x$,$w$,$\pi$) is stored, then return (\text{verification}, \textbf{sid}, $x$, $\pi$, $\mathcal{R}(x,w)$) to $V$. Else, send (\text{verify}, $V$, \textbf{sid}, $x$, $\pi$) to $\mathcal{S}$. Upon receiving, (\text{witness}, $\textbf{sid}$, $w$) from $\mathcal{S}$, store (\textbf{sid}, $x$, $w$, $\pi$) and return (\text{verification}, \textbf{sid}, $x$, $\pi$, $\mathcal{R}(x,w)$) to $V$.
+        \item \textbf{Corruption:} When receiving (\text{corrupt}, \textbf{sid}) from $\mathcal{S}$, mark \textbf{sid} as corrupted. If there is a stored tuple (\textbf{sid}, $x$, $w$, $\pi$), then send it to $\mathcal{S}$.
     \end{enumerate}
-
-    Corruption rules:
-    \begin{itemize}
-        \item If $P$ gets corrupted after sending (\textbf{prove}, $y$, $w$) and before Step 2, $\mathcal{A}$ is given $(y, w)$ and is allowed to change this value to any value $(y',w')\in R'$ at any time before Step 2. 
-    \end{itemize}
-    
-    \end{tcolorbox}
-    \captionof{figure}{Zero-knowledge functionality $\mathcal{F}_{ZK}^{R,R'}$}
-    \label{fig:zk_functionality}
+\end{tcolorbox}
+\captionof{figure}{Non-interactive zero knowledge functionality.}
+\label{fig:zk_functionality}
