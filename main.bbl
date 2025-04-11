@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{3}
+\begin{thebibliography}{13}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -36,6 +36,34 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[Arapinis et~al\mbox{.}(2020)]%
+        {cryptoeprint:2020/513}
+\bibfield{author}{\bibinfo{person}{Myrto Arapinis}, \bibinfo{person}{Nikolaos Lamprou}, \bibinfo{person}{Lenka Mareková}, \bibinfo{person}{Thomas Zacharias}, \bibinfo{person}{Léo Ackermann}, {and} \bibinfo{person}{Pavlos Georgiou}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \bibinfo{title}{E-cclesia: Universally Composable Self-Tallying Elections}.
+\newblock \bibinfo{howpublished}{Cryptology {ePrint} Archive, Paper 2020/513}.
+\newblock
+\urldef\tempurl%
+\url{https://eprint.iacr.org/2020/513}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Canetti(2001)]%
+        {959888}
+\bibfield{author}{\bibinfo{person}{R. Canetti}.} \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Universally composable security: a new paradigm for cryptographic protocols}. In \bibinfo{booktitle}{\emph{Proceedings 42nd IEEE Symposium on Foundations of Computer Science}}. \bibinfo{pages}{136--145}.
+\newblock
+\href{https://doi.org/10.1109/SFCS.2001.959888}{doi:\nolinkurl{10.1109/SFCS.2001.959888}}
+
+
+\bibitem[Chaum(1988)]%
+        {chaum1988dining}
+\bibfield{author}{\bibinfo{person}{David Chaum}.} \bibinfo{year}{1988}\natexlab{}.
+\newblock \showarticletitle{The dining cryptographers problem: Unconditional sender and recipient untraceability}.
+\newblock \bibinfo{journal}{\emph{Journal of cryptology}}  \bibinfo{volume}{1} (\bibinfo{year}{1988}), \bibinfo{pages}{65--75}.
+\newblock
+
+
 \bibitem[Church(1936)]%
         {Church1936}
 \bibfield{author}{\bibinfo{person}{Alonzo Church}.} \bibinfo{year}{1936}\natexlab{}.
@@ -48,6 +76,28 @@
 \tempurl}
 
 
+\bibitem[Corrigan-Gibbs et~al\mbox{.}(2015)]%
+        {corrigan2015riposte}
+\bibfield{author}{\bibinfo{person}{Henry Corrigan-Gibbs}, \bibinfo{person}{Dan Boneh}, {and} \bibinfo{person}{David Mazi{\`e}res}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Riposte: An anonymous messaging system handling millions of users}. In \bibinfo{booktitle}{\emph{2015 IEEE Symposium on Security and Privacy}}. IEEE, \bibinfo{pages}{321--338}.
+\newblock
+
+
+\bibitem[Corrigan-Gibbs and Ford(2010)]%
+        {corrigan2010dissent}
+\bibfield{author}{\bibinfo{person}{Henry Corrigan-Gibbs} {and} \bibinfo{person}{Bryan Ford}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Dissent: accountable anonymous group messaging}. In \bibinfo{booktitle}{\emph{Proceedings of the 17th ACM conference on Computer and communications security}}. \bibinfo{pages}{340--350}.
+\newblock
+
+
+\bibitem[Goel et~al\mbox{.}(2003)]%
+        {goel2003herbivore}
+\bibfield{author}{\bibinfo{person}{Sharad Goel}, \bibinfo{person}{Mark Robson}, \bibinfo{person}{Milo Polte}, {and} \bibinfo{person}{Emin Sirer}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Herbivore: A scalable and efficient protocol for anonymous communication}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}. \bibinfo{institution}{Cornell University}.
+\newblock
+
+
 \bibitem[Gödel(1931)]%
         {Goedel1931}
 \bibfield{author}{\bibinfo{person}{Kurt Gödel}.} \bibinfo{year}{1931}\natexlab{}.
@@ -57,6 +107,23 @@
 \href{https://doi.org/10.1007/bf01700692}{doi:\nolinkurl{10.1007/bf01700692}}
 
 
+\bibitem[Reed et~al\mbox{.}(1998)]%
+        {onion}
+\bibfield{author}{\bibinfo{person}{M.G. Reed}, \bibinfo{person}{P.F. Syverson}, {and} \bibinfo{person}{D.M. Goldschlag}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Anonymous connections and onion routing}.
+\newblock \bibinfo{journal}{\emph{IEEE Journal on Selected Areas in Communications}} \bibinfo{volume}{16}, \bibinfo{number}{4} (\bibinfo{year}{1998}), \bibinfo{pages}{482--494}.
+\newblock
+\href{https://doi.org/10.1109/49.668972}{doi:\nolinkurl{10.1109/49.668972}}
+
+
+\bibitem[Ribarski and Antovski(2012)]%
+        {mixnets}
+\bibfield{author}{\bibinfo{person}{Pance Ribarski} {and} \bibinfo{person}{Ljupcho Antovski}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Mixnets: Implementation and performance evaluation of decryption and re-encryption types}. In \bibinfo{booktitle}{\emph{Proceedings of the ITI 2012 34th International Conference on Information Technology Interfaces}}. \bibinfo{pages}{493--498}.
+\newblock
+\href{https://doi.org/10.2498/iti.2012.0432}{doi:\nolinkurl{10.2498/iti.2012.0432}}
+
+
 \bibitem[Turing(1937)]%
         {Turing1937}
 \bibfield{author}{\bibinfo{person}{Alan~M. Turing}.} \bibinfo{year}{1937}\natexlab{}.
@@ -64,6 +131,21 @@
 \newblock \bibinfo{journal}{\emph{Proceedings of the London Mathematical Society}} \bibinfo{volume}{s2-42}, \bibinfo{number}{1} (\bibinfo{year}{1937}), \bibinfo{pages}{230--265}.
 \newblock
 \href{https://doi.org/10.1112/plms/s2-42.1.230}{doi:\nolinkurl{10.1112/plms/s2-42.1.230}}
+
+
+\bibitem[Vyrostko(2024)]%
+        {dcn_uc}
+\bibfield{author}{\bibinfo{person}{Filip Vyrostko}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \emph{\bibinfo{title}{Creating Provably Secure Anonymous Broadcast Channels}}.
+\newblock \bibinfo{thesistype}{Master's\ thesis}. \bibinfo{school}{University of Glasgow}.
+\newblock
+
+
+\bibitem[Wolinsky et~al\mbox{.}(2012)]%
+        {wolinsky2012dissent}
+\bibfield{author}{\bibinfo{person}{David~Isaac Wolinsky}, \bibinfo{person}{Henry Corrigan-Gibbs}, \bibinfo{person}{Bryan Ford}, {and} \bibinfo{person}{Aaron Johnson}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Dissent in numbers: Making strong anonymity scale}. In \bibinfo{booktitle}{\emph{10th USENIX Symposium on Operating Systems Design and Implementation (OSDI 12)}}. \bibinfo{pages}{179--182}.
+\newblock
 
 
 \end{thebibliography}

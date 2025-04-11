@@ -9,7 +9,7 @@ Variables:
 \begin{itemize}
     \item $R$ - number of rows in each database table
     \item $C$ - length of messages
-    \item $e_{\ell,M}$ - $R$ x $C$ x 2 bitstring containing 0 everywhere except in row $l$ which contains $(M, M^2)\in \mathbb{F}^k$, where $M$ is the message to be sent
+    \item $e_{\ell,M}$ - $R$ x $C$ x 2 tensor containing 0 everywhere except in row $l$ which contains $(M, M^2)\in \mathbb{F}^k$, where $M$ is the message to be sent
     \item $K$ - message limit in a round
 \end{itemize}
 Initialise:
@@ -21,8 +21,8 @@ Initialise:
 If $status_P=0$, then
 \begin{enumerate}
     \item set $status_P\leftarrow 1$
-    \item $P$ chooses index $l \overset{{\scriptscriptstyle\$}}{\leftarrow} [0,R)$ and generates bitstring $e_l$
-    \item $P$ generates random $R$ x $C$ x 2 bitstring $r$
+    \item $P$ chooses index $l \overset{{\scriptscriptstyle\$}}{\leftarrow} [0,R)$ and generates bitstring $e_{\ell,M}$
+    \item $P$ generates random $R$ x $C$ x 2 tensor $r$
     \item $P$ sends (\textbf{prove}, $P$, $e_{\ell,M}$) to $\mathcal{F}_{ZK}^{R,R'}$
     \item $P$ sends $r\oplus e_{\ell,M}$ to Server B using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
     \item $P$ sends $r$ to Server A using $\mathcal{F}_{\mathcal{AEC}}(\{A,B\})$
@@ -45,60 +45,36 @@ If $status_P=0$, then
     Server B executes the following:
     
     
-    Upon receiving (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$, if received (\textbf{sid}, WRITE, M) from $P$:
+    Upon receiving (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$, if received (\textbf{sid}, WRITE, M) from $P$, or upon receiving (\textbf{sid}, WRITE, M) from $P$, if received (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$:
     \begin{enumerate}
         \item add $r\oplus e_{\ell,M}$ into its database  
         \item if $count=K$, then
-        \item 
         \begin{enumerate}
-            \item add $r\oplus e_l$ into its database  
-            \item if $count=K$, then
-            \begin{enumerate}
-                \item combine database with Server A's database
-                \item resolve collisions
-                \item order messages lexicographically as $M_B=<M_1,...,M_K>$
-                \item broadcast messages to all parties
-            \end{enumerate}
+            \item send the contents of its database to Server A
+            \item receive the contents of Sevre A's database
+            \item combine its database with Server A's database using row-by-row bitwise XOR
+            \item detect and resolve collisions as decsribed in \ref{sec:collisions}
+            \item order messages lexicographically as $M_B=<M_1,...,M_K>$
+            \item broadcast messages to all parties using $\mathcal{F}_{BC}$
         \end{enumerate}
     \end{enumerate}
-    Upon receiving (\textbf{sid}, WRITE, M) from $P$, if received (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$:
-        \begin{enumerate}
-            \item add $r\oplus e_l$ into its database  
-            \item if $count=K$, then
-            \begin{enumerate}
-                \item combine database with Server A's database
-                \item check for collisions
-                \item resolve collisions
-                \item order messages lexicographically as $M_B=<M_1,...,M_K>$
-                \item broadcast messages to all parties
-            \end{enumerate}
-        \end{enumerate}
 
 
 \extitem Upon receiving (\textbf{sid}, \textbf{SEND}, $r$) from $P$, if $P$ has not executed a write request in this phase, then
     Server A executes the following:
-    Upon receiving (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$, if received (\textbf{sid}, WRITE, M) from $P$:
+    Upon receiving (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$, if received (\textbf{sid}, WRITE, M) from $P$, or upon receiving (\textbf{sid}, WRITE, M) from $P$, if received (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$:
+    \begin{enumerate}
+        \item add $r$ into its database
+        \item if $count=K$, then
         \begin{enumerate}
-            \item add $r$ into its database
-            \item if $count=K$, then
-            \begin{enumerate}
-                \item combine database with Server B's database
-                \item resolve collisions
-                \item order messages lexicographically as $M_A=<M_1,...,M_K>$
-                \item broadcast messages to all parties
-            \end{enumerate}
+            \item send the contents of its databse to Server B
+            \item receive the contents of Server A's database
+            \item combine database with Server B's database using row-by-row bitwise XOR
+            \item detect and resolve collisions as described in \ref{sec:collisions}
+            \item order messages lexicographically as $M_A=<M_1,...,M_K>$
+            \item broadcast messages to all parties using $\mathcal{F}_{BC}$
         \end{enumerate}
-    Upon receiving (\textbf{sid}, WRITE, M) from $P$, if received (\textbf{proof}, l(y)) from $\mathcal{F}_{ZK}^{R,R'}$:
-        \begin{enumerate}
-            \item XOR $r$ into its database
-            \item if $count=K$, then
-            \begin{enumerate}
-                \item combine database with Server B's database
-                \item resolve collisions
-                \item order messages lexicographically as $M_A=<M_1,...,M_K>$
-                \item broadcast messages to all parties
-            \end{enumerate}
-        \end{enumerate}
+    \end{enumerate}
 \end{tcolorbox}
 
 \captionof{figure}{Anonymous broadcast protocol.}
