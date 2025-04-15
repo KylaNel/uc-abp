@@ -129,20 +129,29 @@ After processing $n$ write requests, Server $A$'s database state will be: $$d_A=
 \label{sec:collisions}
 When a party $P_A$ wants to write the message $M_A\in \mathbb{F}$ to row $\ell$ in the database, the party actually writes the pair $(M_A,M_A^2)\in \mathbb{F}^2$ into row $\ell$. If no collision occurs, i.e. only one client writes their message to row $\ell$ in the database, recovering the original message is trivial. It is easy to check when this is the case, since the second coordinate will be the square of the first. In the case of a two-way collision, say party $P_B$ also writes their message pair $(M_B,M_B^2)\in \mathbb{F}^2$ to the same row $\ell$ in the database. Recall that when a message is written to the database, it is added to the current database state by addition in $\mathbb{F}$. Thus,  the message pair now contained in row $\ell$ of the database is $$S_1=M_A+M_B (\text{mod} p)$$ and $$S_2=M_A^2+M_B^2 (\text{mod}p).$$ Observing that $$2S_2-S_1^2=(M_A-M_B)^2(\text{mod}p)$$ we can obtain $M_A-M_B$ by taking a square root modulo $p$. Using $S_1=M_A+M_B$we can easily recover $M_A$ and $M_B$.
 
-This way of handling two-way collisions can be generalised to $k$-way collision for $k>2$. Each party $P_i$ wanting to write their message $M_i$ into the database instead writes $(M_i,M_i^2,...,M_i^k)\in \mathbb{F}^k$ to its chosen row $\ell$. Now, if a $k$-way collision occurs, we have $k$ equations in $k$ variables which can be solved efficiently to recover all $k$ messages, as long as the characteristic $p$ of $\mathbb{F}$ is greater than $k$. TRADEOFF - SIZE OF TABLES VS GUARANTEED RECOVERY OF MESSAGES.
+This way of handling two-way collisions can be generalised to $k$-way collisions for $k>2$. Each party $P_i$ wanting to write their message $M_i$ into the database instead writes $(M_i,M_i^2,...,M_i^k)\in \mathbb{F}^k$ to its chosen row $\ell$. Now, if a $k$-way collision occurs, we have $k$ equations in $k$ variables which can be solved efficiently to recover all $k$ messages, as long as the characteristic $p$ of $\mathbb{F}$ is greater than $k$. If we choose $k$ to be the same size as the number of parties interacting with the system, complete collision resistance can be guaranteed, even if every single party wrote a message to the same database row. However, increasing the size of $k$ increases the memory overhead of the system. In essence, increasing $k$ increases the number of columns required in the database table of each server. In practice, with passive adversaries, the probability of all parties writing to the same row in the database tables is negligible. the choice of $k$ is a tradeoff between how much memory overhead can be accommodated and how low the system designer wants the probability of unrecoverable collisions to be. 
 
 \subsection{Disruption Resistance}
 Some disruption resistance is already provided by preventing any one party from sending more than one write request per round. However, in the above description of the system, there is nothing preventing a party from sending a malformed write request. For example, an adversary controlling several corrupted parties might instruct each of them to construct a vector $e_{\ell}$ containing a message in every row (instead of only in one row with zeros everywhere else as an honest party would do). A corrupted party could then generate a random vector $r$ as described above, and send $r$ to Server $A$ and $r\oplus e_\ell$ to Server $B$. If enough parties are corrupted, this could flood the system with messages.
 
-To address this, a non-interactive zero knowledge proof is utilised for detecting disruptors. Zero knowledge techniques are applied to allow parties to prove that their write requests are well formed.
+To address this, a non-interactive zero knowledge proof is utilised for detecting disruptors. Zero knowledge techniques are applied to allow parties to prove that their write requests are well formed. In this case, the party (the prover) proves to the verifier (the servers) that the vector $e_{\ell,M}$ they are sending only contains a message in one row, and contains zeros everywhere else.
+
+ $$<P,Q,\overline{b}_i>$$
+ $\overline{B}_{sum}$ is a commitment to $<0,0,..1,...0>$ where $1$ is at index $\ell$ (commitments to 0 except at index $\ell$ which contains 1)
+ $$\Sigma_{i=0}^{s-1}=<r_0Q,r_1,...,P+R_{\ell_x},...,r_{s-1}Q>$$
+ $$\overline{B}_{sum}=<Com(0,r_0),Com(0,r_1),...,Com(1,r_{\ell_x}),...,Com(0,r_{s-1})>$$
 
 
 \section{Functionality \& Protocol}
 \label{sec:func}
 
+The ideal functionality we have constructed based on Riposte follows closely to the original model. The pseudocode for this functionality is presented in ~\cref{fig:riposte_functionality}.
 \input{riposte_uc_functionality}
 \begin{table*}
 \input{riposte_uc_protocol}
+This functionality uses an initially empty list of pending messages $L_{pend}$ and a variable $status_P$ which logs whether a particular client has sent a write request in a given round. When a write request is sent by a client who has not already sent a write request in the current round, that client is marked as having sent a write request in the current round and their message is added to the list of pending messages. If enough write requests have been received, the messages are ordered and published to all parties, and the identity of the last party to send a write request is sent to the simulator $S$. In this case, the pending message list and the status of all parties are reset to their initial values and a new round is begun. Otherwise, the write request, the length of the message, and the party that sent it is sent to the simulator $S$.
+
+
 \end{table*}
 \input{ae_functionality}
 \input{zk_functionality.tex}
