@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{13}
+\begin{thebibliography}{11}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -48,6 +48,15 @@
 \tempurl}
 
 
+\bibitem[Blum et~al\mbox{.}(1991)]%
+        {nizk}
+\bibfield{author}{\bibinfo{person}{Manuel Blum}, \bibinfo{person}{Alfredo De~Santis}, \bibinfo{person}{Silvio Micali}, {and} \bibinfo{person}{Giuseppe Persiano}.} \bibinfo{year}{1991}\natexlab{}.
+\newblock \showarticletitle{Noninteractive Zero-Knowledge}.
+\newblock \bibinfo{journal}{\emph{SIAM J. Comput.}} \bibinfo{volume}{20}, \bibinfo{number}{6} (\bibinfo{year}{1991}), \bibinfo{pages}{1084--1118}.
+\newblock
+\href{https://doi.org/10.1137/0220068}{doi:\nolinkurl{10.1137/0220068}}
+
+
 \bibitem[Canetti(2001)]%
         {959888}
 \bibfield{author}{\bibinfo{person}{R. Canetti}.} \bibinfo{year}{2001}\natexlab{}.
@@ -62,18 +71,6 @@
 \newblock \showarticletitle{The dining cryptographers problem: Unconditional sender and recipient untraceability}.
 \newblock \bibinfo{journal}{\emph{Journal of cryptology}}  \bibinfo{volume}{1} (\bibinfo{year}{1988}), \bibinfo{pages}{65--75}.
 \newblock
-
-
-\bibitem[Church(1936)]%
-        {Church1936}
-\bibfield{author}{\bibinfo{person}{Alonzo Church}.} \bibinfo{year}{1936}\natexlab{}.
-\newblock \showarticletitle{An Unsolvable Problem of Elementary Number Theory}.
-\newblock \bibinfo{journal}{\emph{American Journal of Mathematics}} \bibinfo{volume}{58}, \bibinfo{number}{2} (\bibinfo{year}{1936}), \bibinfo{pages}{345--363}.
-\newblock
-\urldef\tempurl%
-\url{http://www.jstor.org/stable/2371045}
-\showURL{%
-\tempurl}
 
 
 \bibitem[Corrigan-Gibbs et~al\mbox{.}(2015)]%
@@ -98,15 +95,6 @@
 \newblock
 
 
-\bibitem[Gödel(1931)]%
-        {Goedel1931}
-\bibfield{author}{\bibinfo{person}{Kurt Gödel}.} \bibinfo{year}{1931}\natexlab{}.
-\newblock \showarticletitle{Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I}.
-\newblock \bibinfo{journal}{\emph{Monatshefte für Mathematik und Physik}} \bibinfo{volume}{38–38}, \bibinfo{number}{1} (\bibinfo{date}{Dec.} \bibinfo{year}{1931}), \bibinfo{pages}{173–--198}.
-\newblock
-\href{https://doi.org/10.1007/bf01700692}{doi:\nolinkurl{10.1007/bf01700692}}
-
-
 \bibitem[Reed et~al\mbox{.}(1998)]%
         {onion}
 \bibfield{author}{\bibinfo{person}{M.G. Reed}, \bibinfo{person}{P.F. Syverson}, {and} \bibinfo{person}{D.M. Goldschlag}.} \bibinfo{year}{1998}\natexlab{}.
@@ -122,15 +110,6 @@
 \newblock \showarticletitle{Mixnets: Implementation and performance evaluation of decryption and re-encryption types}. In \bibinfo{booktitle}{\emph{Proceedings of the ITI 2012 34th International Conference on Information Technology Interfaces}}. \bibinfo{pages}{493--498}.
 \newblock
 \href{https://doi.org/10.2498/iti.2012.0432}{doi:\nolinkurl{10.2498/iti.2012.0432}}
-
-
-\bibitem[Turing(1937)]%
-        {Turing1937}
-\bibfield{author}{\bibinfo{person}{Alan~M. Turing}.} \bibinfo{year}{1937}\natexlab{}.
-\newblock \showarticletitle{On Computable Numbers, with an Application to the Entscheidungsproblem}.
-\newblock \bibinfo{journal}{\emph{Proceedings of the London Mathematical Society}} \bibinfo{volume}{s2-42}, \bibinfo{number}{1} (\bibinfo{year}{1937}), \bibinfo{pages}{230--265}.
-\newblock
-\href{https://doi.org/10.1112/plms/s2-42.1.230}{doi:\nolinkurl{10.1112/plms/s2-42.1.230}}
 
 
 \bibitem[Vyrostko(2024)]%

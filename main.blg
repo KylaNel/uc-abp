@@ -22,45 +22,45 @@ Warning--empty publisher in mixnets
 Warning--empty address in mixnets
 Warning--empty publisher in wolinsky2012dissent
 Warning--empty address in wolinsky2012dissent
-You've used 13 entries,
+You've used 11 entries,
             6056 wiz_defined-function locations,
-            1573 strings with 20416 characters,
-and the built_in function-call counts, 14626 in all, are:
-= -- 1936
-> -- 359
+            1552 strings with 19932 characters,
+and the built_in function-call counts, 12354 in all, are:
+= -- 1529
+> -- 347
 < -- 0
-+ -- 115
-- -- 130
-* -- 918
-:= -- 1346
-add.period$ -- 67
-call.type$ -- 13
-change.case$ -- 83
-chr.to.int$ -- 13
-cite$ -- 23
-duplicate$ -- 1360
-empty$ -- 947
-format.name$ -- 158
-if$ -- 3626
++ -- 114
+- -- 121
+* -- 817
+:= -- 1173
+add.period$ -- 57
+call.type$ -- 11
+change.case$ -- 76
+chr.to.int$ -- 11
+cite$ -- 21
+duplicate$ -- 1147
+empty$ -- 798
+format.name$ -- 153
+if$ -- 2992
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 45
-newline$ -- 151
-num.names$ -- 91
-pop$ -- 499
+missing$ -- 37
+newline$ -- 130
+num.names$ -- 77
+pop$ -- 440
 preamble$ -- 1
-purify$ -- 186
+purify$ -- 163
 quote$ -- 0
-skip$ -- 515
+skip$ -- 439
 stack$ -- 0
-substring$ -- 1178
-swap$ -- 144
+substring$ -- 960
+swap$ -- 116
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 320
+type$ -- 288
 warning$ -- 10
-while$ -- 96
+while$ -- 73
 width$ -- 0
-write$ -- 293
+write$ -- 250
 (There were 10 warnings)

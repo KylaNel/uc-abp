@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.25)  12 APR 2025 20:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.25)  18 APR 2025 15:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1267,46 +1267,46 @@ Package pdftex.def Info: CompSci_logo.pdf  used on input line 49.
 
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 120.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 123.
+(Font)              scaled to size 6.6pt on input line 120.
 
 Underfull \vbox (badness 7273) has occurred while \output is active []
 
@@ -1316,17 +1316,23 @@ Underfull \vbox (badness 7273) has occurred while \output is active []
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc} <./CompSci_logo.pdf>]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 130.
+(Font)              scaled to size 6.6pt on input line 127.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 130.
+(Font)              scaled to size 5.5pt on input line 127.
 
 
 
-Overfull \hbox (4.73117pt too wide) detected at line 142
-[][] \U/ntxmia/m/it/9 =\OML/nxlmi/m/it/9 < Com\LMS/ntxsy/m/n/9 ¹\OT1/LinuxLibertineT-TLF/m/n/9 0\OML/nxlmi/m/it/9 ; r[]\LMS/ntxsy/m/n/9 º\OML/nxlmi/m/it/9 ; Com\LMS/ntxsy/m/n/9 ¹\OT1/LinuxLibertineT-TLF/m/n/9 0\OML/nxlmi/m/it/9 ; r[]\LMS/ntxsy/m/n/9 º\OML/nxlmi/m/it/9 ; :::; Com\LMS/ntxsy/m/n/9 ¹\OT1/LinuxLibertineT-TLF/m/n/9 1\OML/nxlmi/m/it/9 ; r[]\LMS/ntxsy/m/n/9 º\OML/nxlmi/m/it/9 ; :::; Com\LMS/ntxsy/m/n/9 ¹\OT1/LinuxLibertineT-TLF/m/n/9 0\OML/nxlmi/m/it/9 ; r[]\LMS/ntxsy/m/n/9 º \OML/nxlmi/m/it/9 >
+Overfull \hbox (4.53883pt too wide) in paragraph at lines 134--135
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) utilised for de-tect-ing dis-rup-tors. A non-interactive zero-knowledge
  []
 
-(./riposte_uc_functionality.tex
+
+
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 142.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 142.
+[2.2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}] (./riposte_uc_functionality.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 3.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
@@ -1342,16 +1348,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 31.
 See the caption package documentation for explanation.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 31.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 31.
-[2.2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]) (./riposte_uc_protocol.tex
+) (./riposte_uc_protocol.tex
 
 Package caption Warning: The type was already set to `table'
 (caption)                 on input line 80.
@@ -1361,6 +1358,8 @@ See the caption package documentation for explanation.
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
+
+
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -1382,26 +1381,34 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 10.
 See the caption package documentation for explanation.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 ) (./bc_functionality.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 10.
 See the caption package documentation for explanation.
 
-)
 
-[3.3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}] [4.4] (./main.bbl
+
+[3.3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}])
+Underfull \vbox (badness 5036) has occurred while \output is active []
+
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[4.4] (./main.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 54.
-LaTeX Info: Redefining \tempurl on input line 74.
+(Font)              scaled to size 7.0pt on input line 55.
+
+
 )
 
 
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -1416,18 +1423,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F4E2CA53CC043922D7665E377AF20DFB;1758.
  ) 
 Here is how much of TeX's memory you used:
- 35331 strings out of 473201
- 665373 string characters out of 5716126
- 1188901 words of memory out of 5000000
- 57372 multiletter control sequences out of 15000+600000
- 708053 words of font info for 333 fonts, out of 8000000 for 9000
+ 35330 strings out of 473201
+ 665305 string characters out of 5716126
+ 1186372 words of memory out of 5000000
+ 57365 multiletter control sequences out of 15000+600000
+ 708578 words of font info for 336 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,13n,131p,1915b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathRM.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (5 pages, 481313 bytes).
+ 90i,12n,131p,1915b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (5 pages, 481619 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 86 named destinations out of 1000 (max. 500000)
  71818 words of extra memory for PDF output out of 74296 (max. 10000000)
 
