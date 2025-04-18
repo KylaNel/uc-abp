@@ -111,10 +111,24 @@ The Universal Composability (UC) framework is designed to prove robust security 
 
 UC treatment of the anonymous broadcast problem is as yet a relatively unexplored field. \citet{cryptoeprint:2020/513} constructed a universally composable e-voting system using anonymous broadcast. \citet{dcn_uc} created a universally composable anonymous broadcast channel based on Dining Cryptographers Networks (DC-nets). This construction was limited in that only one message could be sent by only one client every round.
 
+
+\section{Building Blocks}
+\label{sec:func}
+
+\subsection{Authenticated Encrypted Channel}
+\input{ae_functionality}
+
+\subsection{Non-interactive Zero-knowledge}
+\input{zk_functionality.tex}
+
+\subsection{Broadcast}
+\input{bc_functionality.tex}
+
 % % % % % % % % % % % % % % % % % % % % %
 % 			YOUR SYSTEM
 % % % % % % % % % % % % % % % % % % % % %
-\section{System Description}
+\section{Riposte in a UC Setting}
+\subsection{System Description}
 \label{sec:system}
 
 For the purposes of this dissertation, we examine a simple construction of Riposte which utilises two servers. Each server, $A$ and $B$, stores a table with $R$ rows and $C$ columns, where $C$ is the length of messages being sent, which we assume to be constant. Each "row" of the database table represents an index or space to which a message can be written. This database table is initialised to all zeros.
@@ -122,13 +136,13 @@ When a party wishes to send a message $M$, they first choose an index $\ell$ at 
 
 After processing $n$ write requests, Server $A$'s database state will be: $$d_A=r_1+...+r_n$$ and Server $B$'s database state will be: $$d_B=(r_1\oplus e_{{\ell,M}_1}) + ... + (r_n \oplus e_{{\ell,M}_n}).$$ Since both bitwise XOR and addition in $\mathbb{F}$ modulo $p$ are associative operations, Server B's database state can be rearranged as follows: $$d_B = (r_1+..+r_n)\oplus(e_{{\ell,M}_1} + ... + e_{{\ell,M}_n})$$ which is clearly the same as $$d_B = d_A \oplus (e_{{\ell,M}_1} + ... + e_{{\ell,M}_n}).$$ The servers will continue to accept write requests until a pre-determined number of valid requests $K$ have been received. This marks the end of the current round. At the end of the round, the servers combine their local states $d_A$ and $d_B$ to reveal the plaintext database and broadcast this to all parties. The fact that any one party can only send one write request per round protects the system from denial-of-service attacks. Due to the obfuscation of of each message $M$ and its corresponding index $\ell$, neither server, nor the other parties, will know which party sent message $M$ or which location $\ell$ corresponds to $M$. Thus, write-privacy is maintained by this system. It should be noted that although this system provides anonymous broadcast with an anonymity set of size $K$, this comes at the cost of a liveness problem in the system. Since a round does not end until $K$ write requests are received, if fewer than $K$ write requests are received, no messages will be broadcast at all, no matter how much time has elapsed in a current round. This problem is unavoidable if we do not want the anonymity set to be smaller than $K$.
 
-\subsection{Collision Handling}
+\subsubsection{Collision Handling}
 \label{sec:collisions}
 When a party $P_A$ wants to write the message $M_A\in \mathbb{F}$ to row $\ell$ in the database, the party actually writes the pair $(M_A,M_A^2)\in \mathbb{F}^2$ into row $\ell$. If no collision occurs, i.e. only one client writes their message to row $\ell$ in the database, recovering the original message is trivial. It is easy to check when this is the case, since the second coordinate will be the square of the first. In the case of a two-way collision, say party $P_B$ also writes their message pair $(M_B,M_B^2)\in \mathbb{F}^2$ to the same row $\ell$ in the database. Recall that when a message is written to the database, it is added to the current database state by addition in $\mathbb{F}$. Thus,  the message pair now contained in row $\ell$ of the database is $$S_1=M_A+M_B (\text{mod} p)$$ and $$S_2=M_A^2+M_B^2 (\text{mod}p).$$ Observing that $$2S_2-S_1^2=(M_A-M_B)^2(\text{mod}p)$$ we can obtain $M_A-M_B$ by taking a square root modulo $p$. Using $S_1=M_A+M_B$we can easily recover $M_A$ and $M_B$.
 
 This way of handling two-way collisions can be generalised to $k$-way collisions for $k>2$. Each party $P_i$ wanting to write their message $M_i$ into the database instead writes $(M_i,M_i^2,...,M_i^k)\in \mathbb{F}^k$ to its chosen row $\ell$. Now, if a $k$-way collision occurs, we have $k$ equations in $k$ variables which can be solved efficiently to recover all $k$ messages, as long as the characteristic $p$ of $\mathbb{F}$ is greater than $k$. If we choose $k$ to be the same size as the number of parties interacting with the system, complete collision resistance can be guaranteed, even if every single party wrote a message to the same database row. However, increasing the size of $k$ increases the memory overhead of the system. In essence, increasing $k$ increases the number of columns required in the database table of each server. In practice, with passive adversaries, the probability of all parties writing to the same row in the database tables is negligible. the choice of $k$ is a tradeoff between how much memory overhead can be accommodated and how low the system designer wants the probability of unrecoverable collisions to be. 
 
-\subsection{Disruption Resistance}
+\subsubsection{Disruption Resistance}
 Some disruption resistance is already provided by preventing any one party from sending more than one write request per round. However, in the above description of the system, there is nothing preventing a party from sending a malformed write request. For example, an adversary controlling several corrupted parties might instruct each of them to construct a vector $e_{\ell}$ containing a message in every row (instead of only in one row with zeros everywhere else as an honest party would do). A corrupted party could then generate a random vector $r$ as described above, and send $r$ to Server $A$ and $r\oplus e_\ell$ to Server $B$. If enough parties are corrupted, this could flood the system with messages.
 
 To address this, a non-interactive zero-knowledge proof is utilised for detecting disruptors. A non-interactive zero-knowledge proof is a cryptographic primitive which allows a prover to convince a verifier of the validity of some information without revealing anything except the legitimacy of the proof, with the help of a pre-established common random string \cite{nizk}. A non-interactive proof for any NP language $L$ can be defined using a binary relation $\mathcal{R}$ and a tuple of algorithms $(\text{K}, \text{P}, \text{V})$. The syntax is as follows:
@@ -148,19 +162,16 @@ This primitive is applied to allow parties to prove that their write requests ar
 
 If the proof is valid, the party has successfully proves to the servers that their write request is well formed, i.e. that their write request contains only a single message.
 
-
-\section{Functionality \& Protocol}
-\label{sec:func}
-
+\subsection{The Riposte Functionality}
 The ideal functionality we have constructed based on Riposte follows closely to the original model. The pseudocode for this functionality is presented in ~\cref{fig:riposte_functionality}.
 \input{riposte_uc_functionality}
-\begin{table*}
-\input{riposte_uc_protocol}
-\end{table*}
 This functionality uses an initially empty list of pending messages $L_{pend}$ and a variable $status_P$ which logs whether a particular client has sent a write request in a given round. When a write request is sent by a client who has not already sent a write request in the current round, that client is marked as having sent a write request in the current round and their message is added to the list of pending messages. If enough write requests have been received, the messages are ordered and published to all parties, and the identity of the last party to send a write request is sent to the simulator $S$. In this case, the pending message list and the status of all parties are reset to their initial values and a new round is begun. Otherwise, the write request, the length of the message, and the party that sent it is sent to the simulator $S$.
-\input{ae_functionality}
-\input{zk_functionality.tex}
-\input{bc_functionality.tex}
+
+\subsection{The Riposte Protocol}
+\begin{table*}
+  \input{riposte_uc_protocol}
+\end{table*}
+
 
 \section{Proof}
 \label{sec:proof}
