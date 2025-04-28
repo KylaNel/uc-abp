@@ -35,3 +35,243 @@
  volume = {58},
  year = {1936}
 }
+
+
+@article{vyrostko_creating_nodate,
+	title = {Creating {Provably} {Secure} {Anonymous} {Broadcast} {Channels}},
+	abstract = {The Dining Cryptographers Network (DCN) protocol is an anonymous communication system (ACS) that facilitates broadcast while providing complete unobservability to the participants. Notably, it is the only protocol from the ACS family to offer such guarantees. With the increasing demand for such properties due to repeated infringements on personal privacy, this protocol has attracted significant attention in recent years to attain a commercially viable solution. Despite this, the security guarantees have been structured in sub-optimal frameworks for communication systems such as simulation or game-based security due to their inability to retain said guarantees in a protocol composition, which is common for communication systems. We address the issue by proposing a provably secure DCN protocol in the universally composable (UC) setting. We start by presenting an ideal functionality that formalizes the desired security guarantees in the UC framework. We then construct a DCN protocol and prove it securely realizes said functionality.},
+	language = {en},
+	author = {Vyrostko, Filip},
+	file = {PDF:files/78/Vyrostko - Creating Provably Secure Anonymous Broadcast Channels.pdf:application/pdf},
+}
+
+@incollection{vadhan_universally_2007,
+	address = {Berlin, Heidelberg},
+	title = {Universally {Composable} {Security} with {Global} {Setup}},
+	volume = {4392},
+	isbn = {978-3-540-70935-0 978-3-540-70936-7},
+	url = {http://link.springer.com/10.1007/978-3-540-70936-7_4},
+	abstract = {Cryptographic protocols are often designed and analyzed under some trusted setup assumptions, namely in settings where the participants have access to global information that is trusted to have some basic security properties. However, current modeling of security in the presence of such setup falls short of providing the expected security guarantees. A quintessential example of this phenomenon is the deniability concern: there exist natural protocols that meet the strongest known composable security notions, and are still vulnerable to bad interactions with rogue protocols that use the same setup.},
+	language = {en},
+	urldate = {2024-10-15},
+	booktitle = {Theory of {Cryptography}},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Canetti, Ran and Dodis, Yevgeniy and Pass, Rafael and Walfish, Shabsi},
+	editor = {Vadhan, Salil P.},
+	year = {2007},
+	doi = {10.1007/978-3-540-70936-7_4},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {61--85},
+	file = {PDF:files/81/Canetti et al. - 2007 - Universally Composable Security with Global Setup.pdf:application/pdf},
+}
+
+@inproceedings{garay_adaptively_2011,
+	address = {San Jose California USA},
+	title = {Adaptively secure broadcast, revisited},
+	isbn = {978-1-4503-0719-2},
+	url = {https://dl.acm.org/doi/10.1145/1993806.1993832},
+	doi = {10.1145/1993806.1993832},
+	abstract = {We consider the classical problem of synchronous broadcast with dishonest majority, when a public-key infrastructure and digital signatures are available. In a surprising result, Hirt and Zikas (Eurocrypt 2010) recently observed that all existing protocols for this task are insecure against an adaptive adversary who can choose which parties to corrupt as the protocol progresses. Moreover, they prove an impossibility result for adaptively secure broadcast in their setting. We argue that the communication model adopted by Hirt and Zikas is unrealistically pessimistic. We revisit the problem of adaptively secure broadcast in a more natural synchronous model (with rushing), and show that broadcast is possible in this setting for an arbitrary number of corruptions. Our positive result holds under a strong, simulationbased deﬁnition in the universal-composability framework.},
+	language = {en},
+	urldate = {2024-10-15},
+	booktitle = {Proceedings of the 30th annual {ACM} {SIGACT}-{SIGOPS} symposium on {Principles} of distributed computing},
+	publisher = {ACM},
+	author = {Garay, Juan A. and Katz, Jonathan and Kumaresan, Ranjit and Zhou, Hong-Sheng},
+	month = jun,
+	year = {2011},
+	pages = {179--186},
+	file = {PDF:files/82/Garay et al. - 2011 - Adaptively secure broadcast, revisited.pdf:application/pdf},
+}
+
+@incollection{hutchison_framework_2011,
+	address = {Berlin, Heidelberg},
+	title = {A {Framework} for {Practical} {Universally} {Composable} {Zero}-{Knowledge} {Protocols}},
+	volume = {7073},
+	isbn = {978-3-642-25384-3 978-3-642-25385-0},
+	url = {http://link.springer.com/10.1007/978-3-642-25385-0_24},
+	abstract = {Zero-knowledge proofs of knowledge (ZK-PoK) for discrete logarithms and related problems are indispensable for practical cryptographic protocols. Recently, Camenisch, Kiayias, and Yung provided a speciﬁcation language (the CKY-language) for such protocols which allows for a modular design and protocol analysis: for every zero-knowledge proof speciﬁed in this language, protocol designers are ensured that there exists an eﬃcient protocol which indeed proves the speciﬁed statement. However, the protocols resulting from their compilation techniques only satisfy the classical notion of ZK-PoK, which is not retained are when they used as building blocks for higher-level applications or composed with other protocols. This problem can be tackled by moving to the Universal Composability (UC) framework, which guarantees retention of security when composing protocols in arbitrary ways. While there exist generic transformations from Σ-protocols to UC-secure protocols, these transformation are often too ineﬃcient for practice.},
+	language = {en},
+	urldate = {2024-11-06},
+	booktitle = {Advances in {Cryptology} – {ASIACRYPT} 2011},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Camenisch, Jan and Krenn, Stephan and Shoup, Victor},
+	editor = {Hutchison, David and Kanade, Takeo and Kittler, Josef and Kleinberg, Jon M. and Mattern, Friedemann and Mitchell, John C. and Naor, Moni and Nierstrasz, Oscar and Pandu Rangan, C. and Steffen, Bernhard and Sudan, Madhu and Terzopoulos, Demetri and Tygar, Doug and Vardi, Moshe Y. and Weikum, Gerhard and Lee, Dong Hoon and Wang, Xiaoyun},
+	year = {2011},
+	doi = {10.1007/978-3-642-25385-0_24},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {449--467},
+	file = {PDF:files/118/Camenisch et al. - 2011 - A Framework for Practical Universally Composable Zero-Knowledge Protocols.pdf:application/pdf},
+}
+
+@incollection{agrawal_triply_2022,
+	address = {Cham},
+	title = {Triply {Adaptive} {UC} {NIZK}},
+	volume = {13792},
+	isbn = {978-3-031-22965-7 978-3-031-22966-4},
+	url = {https://link.springer.com/10.1007/978-3-031-22966-4_16},
+	abstract = {Non-interactive zero knowledge (NIZK) enables proving the validity of NP statement without leaking anything else. We study multiinstance NIZKs in the common reference string (CRS) model, against an adversary that adaptively corrupts parties and chooses statements to be proven. We construct the ﬁrst such triply adaptive NIZK that provides full adaptive soundness, as well as adaptive zero-knowledge, assuming either LWE or else LPN and DDH (previous constructions rely on nonfalsiﬁable knowledge assumptions). In addition, our NIZKs are universally composable (UC). Along the way, we: – Formulate an ideal functionality, FNICOM, which essentially captures non-interactive commitments, and show that it is realizable by existing protocols using standard assumptions.},
+	language = {en},
+	urldate = {2024-11-06},
+	booktitle = {Advances in {Cryptology} – {ASIACRYPT} 2022},
+	publisher = {Springer Nature Switzerland},
+	author = {Canetti, Ran and Sarkar, Pratik and Wang, Xiao},
+	editor = {Agrawal, Shweta and Lin, Dongdai},
+	year = {2022},
+	doi = {10.1007/978-3-031-22966-4_16},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {466--495},
+	file = {PDF:files/126/Canetti et al. - 2022 - Triply Adaptive UC NIZK.pdf:application/pdf},
+}
+
+@incollection{galbraith_efficient_2019,
+	address = {Cham},
+	title = {Efficient {UC} {Commitment} {Extension} with {Homomorphism} for {Free} (and {Applications})},
+	volume = {11922},
+	isbn = {978-3-030-34620-1 978-3-030-34621-8},
+	url = {https://link.springer.com/10.1007/978-3-030-34621-8_22},
+	language = {en},
+	urldate = {2024-11-07},
+	booktitle = {Advances in {Cryptology} – {ASIACRYPT} 2019},
+	publisher = {Springer International Publishing},
+	author = {Cascudo, Ignacio and Damgård, Ivan and David, Bernardo and Döttling, Nico and Dowsley, Rafael and Giacomelli, Irene},
+	editor = {Galbraith, Steven D. and Moriai, Shiho},
+	year = {2019},
+	doi = {10.1007/978-3-030-34621-8_22},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {606--635},
+	file = {PDF:files/128/Cascudo et al. - 2019 - Efficient UC Commitment Extension with Homomorphism for Free (and Applications).pdf:application/pdf},
+}
+
+@incollection{robshaw_rate-1_2016,
+	address = {Berlin, Heidelberg},
+	title = {Rate-1, {Linear} {Time} and {Additively} {Homomorphic} {UC} {Commitments}},
+	volume = {9816},
+	isbn = {978-3-662-53014-6 978-3-662-53015-3},
+	url = {http://link.springer.com/10.1007/978-3-662-53015-3_7},
+	abstract = {We construct the ﬁrst UC commitment scheme for binary strings with the optimal properties of rate approaching 1 and linear time complexity (in the amortised sense, using a small number of seed OTs). On top of this, the scheme is additively homomorphic, which allows for applications to maliciously secure 2-party computation. As tools for obtaining this, we make three contributions of independent interest: we construct the ﬁrst (binary) linear time encodable codes with non-trivial distance and rate approaching 1, we construct the ﬁrst almost universal hash function with small seed that can be computed in linear time, and we introduce a new primitive called interactive proximity testing that can be used to verify whether a string is close to a given linear code.},
+	language = {en},
+	urldate = {2024-11-07},
+	booktitle = {Advances in {Cryptology} – {CRYPTO} 2016},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Cascudo, Ignacio and Damgård, Ivan and David, Bernardo and Döttling, Nico and Nielsen, Jesper Buus},
+	editor = {Robshaw, Matthew and Katz, Jonathan},
+	year = {2016},
+	doi = {10.1007/978-3-662-53015-3_7},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {179--207},
+	file = {PDF:files/132/Cascudo et al. - 2016 - Rate-1, Linear Time and Additively Homomorphic UC Commitments.pdf:application/pdf},
+}
+
+@inproceedings{corrigan2015riposte,
+  title={Riposte: An anonymous messaging system handling millions of users},
+  author={Corrigan-Gibbs, Henry and Boneh, Dan and Mazi{\`e}res, David},
+  booktitle={2015 IEEE Symposium on Security and Privacy},
+  pages={321--338},
+  year={2015},
+  organization={IEEE}
+}
+
+@INPROCEEDINGS{959888,
+  author={Canetti, R.},
+  booktitle={Proceedings 42nd IEEE Symposium on Foundations of Computer Science}, 
+  title={Universally composable security: a new paradigm for cryptographic protocols}, 
+  year={2001},
+  volume={},
+  number={},
+  pages={136-145},
+  keywords={Cryptographic protocols;Cryptography;Mathematical model;Computer security;Application software;Radio access networks;Reactive power;Job design;Computer science},
+  doi={10.1109/SFCS.2001.959888}}
+
+@misc{cryptoeprint:2020/513,
+      author = {Myrto Arapinis and Nikolaos Lamprou and Lenka Mareková and Thomas Zacharias and Léo Ackermann and Pavlos Georgiou},
+      title = {E-cclesia: Universally Composable Self-Tallying Elections},
+      howpublished = {Cryptology {ePrint} Archive, Paper 2020/513},
+      year = {2020},
+      url = {https://eprint.iacr.org/2020/513}
+}
+
+@mastersthesis{dcn_uc,
+    author = {Filip Vyrostko},
+    title = {Creating Provably Secure Anonymous Broadcast Channels},
+    school = {University of Glasgow},
+    year = 2024
+}
+
+@INPROCEEDINGS{mixnets,
+  author={Ribarski, Pance and Antovski, Ljupcho},
+  booktitle={Proceedings of the ITI 2012 34th International Conference on Information Technology Interfaces}, 
+  title={Mixnets: Implementation and performance evaluation of decryption and re-encryption types}, 
+  year={2012},
+  volume={},
+  number={},
+  pages={493-498},
+  keywords={Peer to peer computing;Protocols;Public key;Receivers;Encryption;mixnets;decryption;re-encryption;e-voting;algorithms;performance;Elgamal;threshold;dealer},
+  doi={10.2498/iti.2012.0432}}
+
+@ARTICLE{onion,
+  author={Reed, M.G. and Syverson, P.F. and Goldschlag, D.M.},
+  journal={IEEE Journal on Selected Areas in Communications}, 
+  title={Anonymous connections and onion routing}, 
+  year={1998},
+  volume={16},
+  number={4},
+  pages={482-494},
+  keywords={Routing;Telecommunication traffic;Internet;Sockets;Electronic mail;Information security;Cryptography;Information analysis;Protection;Application software},
+  doi={10.1109/49.668972}}
+
+@ARTICLE{dcnet,
+  author={Shirali, Mohsen and Tefke, Tobias and Staudemeyer, Ralf C. and Pöhls, Henrich C.},
+  journal={IEEE Access}, 
+  title={A Survey on Anonymous Communication Systems With a Focus on Dining Cryptographers Networks}, 
+  year={2023},
+  volume={11},
+  number={},
+  pages={18631-18659},
+  keywords={Privacy;Protocols;Telecommunication traffic;Cryptography;Encryption;Scalability;Metadata;Communication systems;Privacy-preservation;anonymity;anonymous communication system (ACS);dining cryptographers network (DCN);unobservability},
+  doi={10.1109/ACCESS.2023.3242870},
+  ISSN={2169-3536},
+  month={},}
+
+@article{chaum1988dining,
+  title={The dining cryptographers problem: Unconditional sender and recipient untraceability},
+  author={Chaum, David},
+  journal={Journal of cryptology},
+  volume={1},
+  pages={65--75},
+  year={1988},
+  publisher={Springer}
+}
+
+@techreport{goel2003herbivore,
+  title={Herbivore: A scalable and efficient protocol for anonymous communication},
+  author={Goel, Sharad and Robson, Mark and Polte, Milo and Sirer, Emin},
+  year={2003},
+  institution={Cornell University}
+}
+
+@inproceedings{corrigan2010dissent,
+  title={Dissent: accountable anonymous group messaging},
+  author={Corrigan-Gibbs, Henry and Ford, Bryan},
+  booktitle={Proceedings of the 17th ACM conference on Computer and communications security},
+  pages={340--350},
+  year={2010}
+}
+
+@inproceedings{wolinsky2012dissent,
+  title={Dissent in numbers: Making strong anonymity scale},
+  author={Wolinsky, David Isaac and Corrigan-Gibbs, Henry and Ford, Bryan and Johnson, Aaron},
+  booktitle={10th USENIX Symposium on Operating Systems Design and Implementation (OSDI 12)},
+  pages={179--182},
+  year={2012}
+}
+
+@article{nizk,
+author = {Blum, Manuel and De Santis, Alfredo and Micali, Silvio and Persiano, Giuseppe},
+title = {Noninteractive Zero-Knowledge},
+journal = {SIAM Journal on Computing},
+volume = {20},
+number = {6},
+pages = {1084-1118},
+year = {1991},
+doi = {10.1137/0220068}
+}

@@ -12,44 +12,55 @@ Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-You've used 3 entries,
+Warning--empty publisher in 959888
+Warning--empty address in 959888
+Warning--empty publisher in corrigan2015riposte
+Warning--empty address in corrigan2015riposte
+Warning--empty publisher in corrigan2010dissent
+Warning--empty address in corrigan2010dissent
+Warning--empty publisher in mixnets
+Warning--empty address in mixnets
+Warning--empty publisher in wolinsky2012dissent
+Warning--empty address in wolinsky2012dissent
+You've used 11 entries,
             6056 wiz_defined-function locations,
-            1511 strings with 18478 characters,
-and the built_in function-call counts, 3674 in all, are:
-= -- 604
-> -- 51
+            1552 strings with 19932 characters,
+and the built_in function-call counts, 12354 in all, are:
+= -- 1529
+> -- 347
 < -- 0
-+ -- 14
-- -- 21
-* -- 199
-:= -- 303
-add.period$ -- 15
-call.type$ -- 3
-change.case$ -- 15
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 321
-empty$ -- 225
-format.name$ -- 21
-if$ -- 973
++ -- 114
+- -- 121
+* -- 817
+:= -- 1173
+add.period$ -- 57
+call.type$ -- 11
+change.case$ -- 76
+chr.to.int$ -- 11
+cite$ -- 21
+duplicate$ -- 1147
+empty$ -- 798
+format.name$ -- 153
+if$ -- 2992
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 12
-newline$ -- 69
-num.names$ -- 21
-pop$ -- 93
+missing$ -- 37
+newline$ -- 130
+num.names$ -- 77
+pop$ -- 440
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 163
 quote$ -- 0
-skip$ -- 115
+skip$ -- 439
 stack$ -- 0
-substring$ -- 331
-swap$ -- 42
+substring$ -- 960
+swap$ -- 116
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
-warning$ -- 0
-while$ -- 28
+type$ -- 288
+warning$ -- 10
+while$ -- 73
 width$ -- 0
-write$ -- 101
+write$ -- 250
+(There were 10 warnings)
